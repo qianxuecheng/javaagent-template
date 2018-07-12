@@ -51,7 +51,9 @@ public class AopAgentTransformer implements ClassFileTransformer {
         //situation 1:添加监控时间
         method.instrument(new ExprEditor() {
             public void edit(MethodCall m) throws CannotCompileException {
-                m.replace("{ long stime = System.currentTimeMillis(); $_ = $proceed($$);System.out.println(\""
+                m.replace("{ long stime = System.currentTimeMillis(); " +
+                        "$_ = $proceed($$);" +
+                        "System.out.println(\""
                         + m.getClassName() + "." + m.getMethodName()
                         + " cost:\" + (System.currentTimeMillis() - stime) + \" ms\");}");
             }

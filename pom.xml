@@ -76,8 +76,11 @@
                     <archive>
                         <manifestEntries>
                             <Premain-Class>
-                                com.jdktest.instrument.AopAgentTest
+                                com.github.AopAgentTest
                             </Premain-Class>
+                            <Agentmain-Class>
+                                com.github.AopAgentTest
+                            </Agentmain-Class>
                             <Boot-Class-Path>
                                 E:/maven-lib/javassist/javassist/3.8.0.GA/javassist-3.8.0.GA.jar
                             </Boot-Class-Path>
